@@ -159,7 +159,7 @@ router.post('/', authenticate, async (req, res) => {
   }
 })
 //Get Specific User
-router.get('/:userId', async (req, res) => {
+router.get('/:userId', authenticate, async (req, res) => {
   console.log('User ID Hit....')
   try {
     var cond = mongoose.Types.ObjectId.isValid(req.params.userId)
